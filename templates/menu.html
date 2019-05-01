@@ -1,0 +1,45 @@
+{% include "nav.html" %}
+
+<html>
+    <head>
+        <title>Login</title>
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='search.css') }}">
+        <style>
+          .card-img-top
+{
+  width: 240px;
+  height: 320px;
+  padding: 20px;
+}
+        </style>
+    </head>
+
+
+    <body>
+     <a href="{{url_for('searchbox')}}"><h1 style="margin-top: 150px;"><span class="glyphicon glyphicon-search"></span>Search Books</h1></a>
+ 
+<div class="container" style="margin:auto;margin-left: 10px;">
+      <h4> Let's Take a Quiz </h4><a href="{{url_for('quiz')}}"><h4>here</h4></a>
+
+        <div>
+          <div class="row" >
+            <div style="display: grid;width: 240px;height: 320px;padding: 10px;grid-template-columns: auto auto auto auto auto;margin-left: 25px;">
+              {% for result in results %}
+              <div style="border-style: groove;">
+               <img class="card-img-top" src="http://covers.openlibrary.org/b/ISBN/{{result.isbn}}-M.jpg" alt="Card image cap">
+                <h4 style="text-align: center;"> {{result.title}}</h4>
+              </div>
+             
+                {% endfor %}
+             
+            
+          </div>
+        </div>
+        </body>
+
+    </html>

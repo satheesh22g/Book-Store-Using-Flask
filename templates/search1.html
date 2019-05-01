@@ -1,0 +1,28 @@
+{% include "nav.html" %}
+<head>
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='search.css') }}">
+
+</head>
+<body>
+<div class="container" style="margin: 0px;height: 50px;width: 90px;">
+ <div id="cover">
+ <form action="{{ url_for('search') }}" method="post">
+    <div class="tb">
+      <div class="td"><input class="form-control" name="searchbox" type="text" required placeholder="Title, ISBN, Author ..."></div>
+      <div class="td" id="s-cover">
+        <button type="submit">
+          <div id="s-circle"></div>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+</body>

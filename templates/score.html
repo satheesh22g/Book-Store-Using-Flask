@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div>
+      <div>
+	<h3>Congragulations.....</h3><br>        
+	You have successfully completed the Quiz.
+	<br>
+        Your Score is: {{ score }}
+      </div>
+    </div>
+   <a href="{{ url_for('quiz') }}"> <h3>click</h3></a>
+
+
+
+{% endblock %}
+
+
